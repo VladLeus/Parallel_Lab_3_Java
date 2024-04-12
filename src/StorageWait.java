@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+
 public class StorageWait implements Storage {
     private final int capacity;
     private final LinkedList<Integer> storage;
@@ -7,6 +8,11 @@ public class StorageWait implements Storage {
     public StorageWait(int capacity) {
         this.capacity = capacity;
         this.storage = new LinkedList<>();
+    }
+
+    @Override
+    public LinkedList<Integer> getStorage() {
+        return storage;
     }
 
     public synchronized void add(Integer elem) throws InterruptedException {

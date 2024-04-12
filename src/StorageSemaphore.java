@@ -11,6 +11,11 @@ public class StorageSemaphore  implements Storage {
         this.itemsAvailable = new Semaphore(0);
     }
 
+    @Override
+    public LinkedList<Integer> getStorage() {
+        return storage;
+    }
+
     public void add(Integer elem) throws InterruptedException {
         spaceAvailable.acquire();
         synchronized (this) {
