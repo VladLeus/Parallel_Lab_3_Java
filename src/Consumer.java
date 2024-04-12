@@ -2,13 +2,10 @@ public class Consumer extends Thread {
     private final long id;
     private final Storage storage;
 
-    private final int itemsToConsume;
-
 
     public Consumer(long id, Storage storage, int itemsToConsume) {
         this.id = id;
         this.storage = storage;
-        this.itemsToConsume = itemsToConsume;
     }
 
     @Override
